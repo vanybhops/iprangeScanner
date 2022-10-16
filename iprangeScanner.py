@@ -1,6 +1,6 @@
 from sys import argv as arguments
 from sys import exit
-import time
+import time,os
 import requests
 import socket
 import re
@@ -60,6 +60,7 @@ def main():
                             if p>=256:
                                 continue
                             ip = str(i) + "." + str(e) + "." + str(r) + "." + str(p)
+                            os.system("title checking : "+ip)
                             p += 1
                             thread=Thread(target=scan,args=(ip,),daemon=False)
                             thread.start()
